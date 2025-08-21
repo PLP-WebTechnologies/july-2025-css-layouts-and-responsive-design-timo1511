@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Layout with Flexbox & Grid</title>
+    <!-- Link to the external responsive stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="grid-container">
+        <!-- Header Area -->
+        <header class="header">
+            <h1>My Responsive Site</h1>
+        </header>
+
+        <!-- Navigation Bar -->
+        <nav class="nav">
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Features</a></li>
+                <li><a href="#">Pricing</a></li>
+                <li><a href="#">About</a></li>
+            </ul>
+        </nav>
+
+        <!-- Main Content Area -->
+        <main class="main">
+            <h2>Main Content</h2>
+            <p>This main content area and the sidebar are managed by CSS Grid. On smaller screens, the sidebar stacks below. On larger screens, it moves to the side.</p>
+            
+            <!-- Flexbox Section for Cards -->
+            <h3>Featured Articles (Flexbox Layout)</h3>
+            <section class="card-container">
+                <div class="card">
+                    <h4>Article One</h4>
+                    <p>This layout uses Flexbox to align items. On mobile, cards stack vertically.</p>
+                </div>
+                <div class="card">
+                    <h4>Article Two</h4>
+                    <p>On wider screens, they sit side-by-side, adapting to the available space.</p>
+                </div>
+                <div class="card">
+                    <h4>Article Three</h4>
+                    <p>Flexbox is ideal for distributing space along a single axis (a row or a column).</p>
+                </div>
+            </section>
+        </main>
+
+        <!-- Sidebar Area -->
+        <aside class="sidebar">
+            <h3>Sidebar</h3>
+            <p>This is the sidebar. It's a separate grid item that can be positioned independently of the main content.</p>
+        </aside>
+
+        <!-- Footer Area -->
+        <footer class="footer">
+            <p>&copy; 2025 Timothy Makori</p>
+        </footer>
+    </div>
+
+</body>
+</html>
