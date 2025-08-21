@@ -1,0 +1,107 @@
+/* style.css */
+/* Responsive layout using CSS Grid and Flexbox */
+
+/* --- General & Mobile-First Styles --- */
+:root {
+    --primary-color: #007BFF;
+    --dark-color: #333;
+    --light-color: #f4f4f4;
+    --container-padding: 20px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    background-color: #e9e9e9;
+    color: var(--dark-color);
+}
+
+/* --- CSS Grid Layout (Mobile-First) --- */
+.grid-container {
+    display: grid;
+    /* Define grid areas for a single-column mobile layout */
+    grid-template-areas:
+        'header'
+        'nav'
+        'main'
+        'sidebar'
+        'footer';
+    gap: 15px; /* Space between grid items */
+    padding: 15px;
+}
+
+/* Assigning elements to their grid areas */
+.header { grid-area: header; background: var(--dark-color); color: white; padding: var(--container-padding); text-align: center; }
+.nav { grid-area: nav; background: #4a4a4a; }
+.main { grid-area: main; background: white; padding: var(--container-padding); }
+.sidebar { grid-area: sidebar; background: var(--light-color); padding: var(--container-padding); }
+.footer { grid-area: footer; background: var(--dark-color); color: white; padding: var(--container-padding); text-align: center; }
+
+/* --- Navigation Styling (Flexbox) --- */
+.nav-links {
+    list-style: none;
+    padding: 10px;
+    margin: 0;
+    display: flex;
+    /* On mobile, links will wrap if they run out of space */
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+}
+
+/* --- Card Section (Flexbox) --- */
+.card-container {
+    display: flex;
+    /* On mobile, cards stack vertically */
+    flex-direction: column;
+    gap: 15px; /* Space between cards */
+    margin-top: 20px;
+}
+
+.card {
+    border: 1px solid #ddd;
+    padding: 15px;
+    background: #f9f9f9;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* --- Responsive Adjustments using Media Queries --- */
+
+/* Tablet Breakpoint (e.g., screens wider than 768px) */
+@media (min-width: 768px) {
+    .grid-container {
+        /* Redefine the grid for a two-column layout */
+        grid-template-columns: 3fr 1fr; /* Main content is 3x wider than sidebar */
+        grid-template-areas:
+            'header header'
+            'nav nav'
+            'main sidebar'
+            'footer footer';
+    }
+
+    .card-container {
+        /* On tablets, cards are in a row */
+        flex-direction: row;
+    }
+}
+
+/* Desktop Breakpoint (e.g., screens wider than 1024px) */
+@media (min-width: 1024px) {
+    .grid-container {
+        /* Make the grid wider on large screens */
+        max-width: 1200px;
+        margin: auto;
+        grid-template-columns: 4fr 1fr; /* Give even more space to main content */
+    }
+
+    .nav-links {
+        justify-content: flex-start; /* Align nav links to the left */
+    }
+}
